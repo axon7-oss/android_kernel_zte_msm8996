@@ -628,8 +628,10 @@ KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-const-variable)
 KBUILD_CFLAGS += $(CLANG_TARGET) $(CLANG_GCC_TC) $(CLANG_PREFIX)
 KBUILD_AFLAGS += $(CLANG_TARGET) $(CLANG_GCC_TC) $(CLANG_PREFIX)
-KBUILD_CFLAGS += -no-integrated-as
-KBUILD_AFLAGS += -no-integrated-as
+CLANG_FLAGS += -no-integrated-as
+KBUILD_CFLAGS += $(CLANG_FLAGS)
+KBUILD_AFLAGS += $(CLANG_FLAGS)
+export CLANG_FLAGS
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile

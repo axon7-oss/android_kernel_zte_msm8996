@@ -740,7 +740,7 @@ int msm_vidc_release_buffers(void *instance, int buffer_type)
 					"Failed to move inst: %pK to release res done\n",
 					inst);
 		}
-	}
+}
 
 	/*
 	* In dynamic buffer mode, driver needs to release resources,

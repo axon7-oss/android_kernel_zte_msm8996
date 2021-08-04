@@ -97,11 +97,6 @@ ifeq ($(call get-executable,$(BISON)),)
   dummy := $(error Error: $(BISON) is missing on this system, please install it)
 endif
 
-# Treat warnings as errors unless directed not to
-ifneq ($(WERROR),0)
-  CFLAGS += -Werror
-endif
-
 ifndef DEBUG
   DEBUG := 0
 endif
